@@ -1,0 +1,41 @@
+---
+title: "YAML"
+subtitle: "Sumário"
+output: 
+  html_document:
+    theme: cosmo
+    highlight: zenburn
+    toc: true
+    number_sections: true
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Temas
+
+Opções: "cerulean", "journal", "flatly", "darkly", "readable", "spacelab", "united", "cosmo", "lumen", "paper", "sandstone", "simplex", "yeti"
+
+## Highlight
+
+Opções: "tango", "pygments", "kate", "monochrome", "espresso", "zenburn", "haddock", "textmate"
+
+```{r cars}
+summary(cars)
+```
+
+## Sumários
+
+
+
+### Plots
+
+
+
+```{r pressure}
+plot(pressure)
+```
+
+

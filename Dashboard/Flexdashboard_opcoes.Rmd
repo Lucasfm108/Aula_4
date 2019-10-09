@@ -1,0 +1,236 @@
+---
+title: "Flexdashboard - mais opções"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Página 1 (Layout - coluna)
+=====================================  
+
+Coluna {data-width=300}
+-----------------------------------------------------------------------
+
+### Gráfico A
+
+O argumento "vertical_layout" pode assumir os valores *fill*, para tela fixa, ou *scroll*, para permitir o rolamento da página. 
+
+Para mais opções, consultar [https://rmarkdown.rstudio.com/flexdashboard/](https://rmarkdown.rstudio.com/flexdashboard/)
+
+```{r}
+
+```
+
+Coluna {data-width=400, .tabset}
+-----------------------------------------------------------------------
+
+### Gráfico B
+
+Podemos deixar um gráfico oculto em uma coluna usando o argumento  "{.tabset}"
+
+```{r}
+
+```
+
+### Gráfico C
+
+```{r}
+
+```
+
+### Gráfico D
+
+```{r}
+
+```
+
+### Gráfico E
+
+```{r}
+
+```
+
+Coluna {data-width=300}
+-----------------------------------------------------------------------
+
+### Gráfico F
+
+
+```{r}
+
+```
+
+### Gráfico G
+
+
+```{r}
+
+```
+
+### Gráfico H
+
+
+```{r}
+
+```
+
+### Gráfico I
+
+
+```{r}
+
+```
+
+Página 2 (Layout - linha) {data-orientation=rows}
+=====================================
+
+
+Linha {data-height=200}
+-----------------------------------------------------------------------
+
+### Gráfico A
+
+
+```{r}
+
+```
+
+Linha {data-heigth=600}
+-----------------------------------------------------------------------
+
+### Gráfico B
+
+
+```{r}
+
+```
+
+### Gráfico C
+
+```{r}
+
+```
+
+### Gráfico D
+
+```{r}
+
+```
+
+Linha {data-height=200, .tabset}
+-----------------------------------------------------------------------
+
+### Gráfico E
+
+Podemos deixar um gráfico oculto em uma linha usando o argumento  "{.tabset}"
+
+
+```{r}
+
+```
+
+### Gráfico F
+
+
+```{r}
+
+```
+
+### Gráfico G
+
+```{r}
+
+```
+
+### Gráfico H
+
+
+```{r}
+
+```
+
+
+Página 3 {data-navmenu="Outras páginas"}
+=====================================
+
+Inputs {.sidebar}
+-------------------------------------
+
+Esta é a barra lateral
+
+
+Coluna
+-------------------------------------
+
+### Gráfico A
+
+
+Página 4 {data-navmenu="Outras páginas"}
+=====================================
+
+
+Coluna {data-width=200}
+-------------------------------------
+
+> Para mais símbolos, conferir: [https://fontawesome.com/icons?d=gallery](https://fontawesome.com/icons?d=gallery)
+
+### Value box
+
+```{r}
+valueBox(50, caption="Box1",
+         icon="fa-book-open", 
+         color="#7FDBFF")
+```
+
+###
+
+```{r}
+valueBox(1000, caption="Box2",
+         icon="fa-balance-scale",
+         color="#FFDC00")
+```
+
+### 
+
+```{r }
+gauge(value=94,
+      min=0,
+      max=100,
+      sectors=gaugeSectors(
+        success = c(90,100),
+        warning=c(20,89),
+        danger=c(0,19)),
+      symbol="%")
+```
+
+
+Coluna {data-width=800}
+-------------------------------------
+
+### Tabela 
+
+```{r include=FALSE}
+library(rio)
+library(tidyverse)
+library(DT)
+a <- import("E:\\Curso R\\Aula 3\\jn.xlsx")
+b <- a %>% filter(ano==2018) %>% 
+  select(ano, sigla, g10a, g10b, g10c, g10d)
+```
+
+```{r}
+datatable(b, extensions="Buttons", options=list(
+    dom='Bfrtip',
+    buttons=c("copy","csv", "excel", "pdf", "print"))
+)
+```
+
+
+
+

@@ -1,0 +1,54 @@
+---
+title: "Orientação pelas colunas"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+```
+
+Coluna {data-width=200}
+-----------------------------------------------------------------------
+
+### Gráfico A
+
+Lembrem-se que a largura total da página é de 1000
+
+```{r}
+
+```
+
+Coluna {data-width=600}
+-----------------------------------------------------------------------
+
+### Gráfico B
+
+Se forem incluídos mais de um gráfico na mesma coluna, eles serão agrupados na vertical
+
+```{r}
+
+```
+
+### Gráfico C
+
+```{r}
+
+```
+
+### Gráfico D
+
+```{r}
+
+```
+
+Coluna {data-width=200}
+-----------------------------------------------------------------------
+
+### Gráfico E
+
+```{r}
+
+```
